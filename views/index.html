@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Parallax Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body id="home">
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#" id='home_btn'>Home</a></li>
+        <li><a href="#" id='locations_btn'>Locations</a></li>
+        <li><a href="#" id='most_popular_btn'>Most Popular</a></li>
+        <li><a href="#" id='testimonials_btn'>Testimonials</a></li>
+        <li><a href="#" id='reach_out_btn'>Reach Out</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#" id='home_btn'>Home</a></li>
+        <li><a href="#" id='locations_btn'>Locations</a></li>
+        <li><a href="#" id='most_popular_btn'>Most Popular</a></li>
+        <li><a href="#" id='testimonials_btn'>Testimonials</a></li>
+        <li><a href="#" id='reach_out_btn'>Reach Out</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2" style="display:inline-block">How many rocks are there? <span id="num_rocks_counter"></span></h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A non-profit project to help us figure out how many there actually are.</h5>
+        </div>
+        <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">See what we've found</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="rocks-home-page.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+  <!-- Google map -->
+  <div id="map_canvas" style="height: 450px; width: 100%;"></div>
+
+
+  <!-- Most Popular Posts --> 
+  <div class="container" id="most_popular">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center" id="most_popular">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Most Popular Rocks</h4>
+          <p class="light">These are a few one's the community really liked; &amp; we hope you like them too :)</p>
+
+
+          <div class="row">
+            <div class="col s6 m4">
+
+              <div class="card hoverable">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="example.jpg">
+                </div>
+                <div class="card-content left-align">
+                  <span class="card-title activator grey-text text-darken-4">
+                    <div class="row valign-wrapper" style="margin-bottom: 0px !important">
+                      <div class="col s3 valign">
+                        <img class="circle responsive-img" src="example.jpg" alt="User Profile Picture">
+                      </div>
+                      <div class="col s9">
+                        <span class="black-text">
+                          <div class="discovered-by">Discovered by:</div>
+                          Username
+                        </span>
+                        <i class="material-icons right">more_vert</i>
+                      </div>
+                    </div>
+                  </span>
+                  
+                  <!-- <p><a href="#">This is a link</a></p> -->
+                </div>
+
+
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4 left-align">
+
+                    <div class="col s3 valign">
+                        <img class="circle responsive-img" src="example.jpg" alt="User Profile Picture">
+                      </div>
+                      <div class="col s7">
+                        <span class="black-text">
+                          <div class="discovered-by">Discovered by:</div>
+                          Username
+                        </span>
+                      </div>
+                      <div class="col s2">
+                        <i class="material-icons right">close</i>
+                      </div>
+                  </span>
+
+                  <table class="bordered popular-rocks">
+                    <tbody>
+                      <tr>
+                        <td class="uppercase">Rock No.</td>
+                        <td>000000000000003</td>
+                      </tr>
+                      <tr>
+                        <td class="uppercase">Location</td>
+                        <td>Grand Rapids, MI, USA</td>
+                      </tr>
+                      <tr>
+                        <td class="uppercase">Coordinates</td>
+                        <td>42,9182742, 73.2384923</td>
+                      </tr>
+                      <tr>
+                        <td class="uppercase">Discovered</td>
+                        <td>September 3, 2016</td>
+                      </tr>
+                      <tr>
+                        <td class="uppercase">Nickname</td>
+                        <td>daddy</td>
+                      </tr>
+                      <tr>
+                        <td class="uppercase">Notes</td>
+                        <td>Not my favorite rock. Kinda cold.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="container" id="testimonials">
+    <div class="section">
+
+      <!-- Title of Section -->
+      <div class="row">
+        <div class="col s12 center" id="most_popular">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Testimonials</h4>
+          <p class="light">You know this is interesting, but we'll let real users tell you what they think.</p>
+        </div>
+      </div>
+
+
+      <div class="row">
+
+      <!-- Testimonial 1 -->
+        <div class="col s12 m6 l6">
+          <div class="card-panel grey lighten-5 z-depth-1 hoverable">
+            <div class="row valign-wrapper" style="margin-bottom: 0px !important">
+              <div class="col s3">
+                <img src="example.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s9">
+                <span class="black-text">
+                  "This is an app that counts rocks." <p class="quote-person right-align">- Michael Copley</p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col s12 m6 l6">
+          <div class="card-panel grey lighten-5 z-depth-1 hoverable">
+            <div class="row valign-wrapper" style="margin-bottom: 0px !important">
+              <div class="col s3">
+                <img src="example.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s9">
+                <span class="black-text">
+                  "This is an app that counts rocks." <p class="quote-person right-align">- Michael Copley</p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal" id="reach_out">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/countUp.js"></script>
+  <script type="text/javascript">
+    /* This is for the full screen video background */
+    $(document).ready(function () {
+
+
+      // Scroll Code
+      $("#home_btn").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#home").offset().top},
+            'slow');
+      });
+      $("#locations_btn").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#map_canvas").offset().top},
+            'slow');
+      });
+      $("#most_popular_btn").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#most_popular").offset().top},
+            'slow');
+      });
+      $("#testimonials_btn").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#testimonials").offset().top},
+            'slow');
+      });
+      $("#reach_out_btn").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#reach_out").offset().top},
+            'slow');
+      });
+
+
+      // CountUp code
+      var options = {
+        useEasing : true, 
+        useGrouping : true, 
+        separator : ',', 
+        decimal : '.', 
+        prefix : '', 
+        suffix : '' 
+      };
+      var num_rocks = new CountUp("num_rocks_counter", 0, 3113, 0, 2.5, options);
+      num_rocks.start();
+
+      function initialize() {
+        var mapCanvas = document.getElementById('map_canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(42.282544, -83.732732),
+          zoom: 14,
+          scrollwheel: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(42.282544, -83.732732),
+          map: map,
+          title: 'a rock'
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      // initialize();
+    });
+
+  </script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+
+
+  </body>
+</html>

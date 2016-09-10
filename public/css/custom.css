@@ -1,0 +1,22 @@
+/*
+Custom styles for how-many-rocks
+*/
+
+.popular-rocks > tbody > tr {
+	line-height: 1.1 !important;
+	font-size: 80%;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.discovered-by {
+	font-size: 40%;
+	line-height: 0.2 !important;
+}
+
+.quote-person {
+	font-weight: bold;
+	font-style: italic;
+}
