@@ -37,18 +37,20 @@ html {
 }
 
 .counter {
-    width: 71px;
-    height: 96px;
+    width: 36px;
+    height: 48px;
     overflow: hidden;
     background-color: white;
     display: inline-block;
+    margin-bottom: 5px;
 }
 .counter .bg {
     /*background: url('../bg.png') no-repeat;*/
-    width: 71px;
-    height: 96px;
+    width: 36px;
+    height: 48px;
     position: absolute;
     z-index: 100;
+    margin-bottom: 5px;
 }
 
 .carousel .carousel-item {
@@ -58,4 +60,21 @@ html {
 
 .carousel {
 	height: 450px !important;
+}
+
+.modal {
+	width: 25%;
+	height:auto;
+}
+
+@media only screen and (max-width: 992px) {
+	.modal {
+	    width: 40%;
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	.modal {
+	    width: 80%;
+	}
 }

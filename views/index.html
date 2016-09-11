@@ -46,26 +46,54 @@
 
         <!-- Counter -->
         <div class="row center">
-          <div class="col s12 m8 offset-m2 l8 offset-l2">
-           <!--  <div class="counter" id="example5">
+          <div class="col s12 m12 l12">
+            <div class="counter" id="example12">
               <div class="bg"></div>
-              <img src="digit.png"/>
-            </div> -->
+              <img src="digit-small.png"/>
+            </div>
+            <div class="counter" id="example11">
+              <div class="bg"></div>
+              <img src="digit-small.png"/>
+            </div>
+            <div class="counter" id="example10">
+              <div class="bg"></div>
+              <img src="digit-small.png"/>
+            </div>
+            <div class="counter" id="example9">
+              <div class="bg"></div>
+              <img src="digit-small.png"/>
+            </div>
+            <div class="counter" id="example8">
+              <div class="bg"></div>
+              <img src="digit-small.png"/>
+            </div>
+            <div class="counter" id="example7">
+              <div class="bg"></div>
+              <img src="digit-small.png"/>
+            </div>
+            <div class="counter" id="example6">
+              <div class="bg"></div>
+              <img src="digit-small.png"/>
+            </div>
+            <div class="counter" id="example5">
+              <div class="bg"></div>
+              <img src="digit-small.png"/>
+            </div>
             <div class="counter" id="example4">
               <div class="bg"></div>
-              <img src="digit.png"/>
+              <img src="digit-small.png"/>
             </div>
             <div class="counter" id="example3">
               <div class="bg"></div>
-              <img src="digit.png"/>
+              <img src="digit-small.png"/>
             </div>
             <div class="counter" id="example2">
               <div class="bg"></div>
-              <img src="digit.png"/>
+              <img src="digit-small.png"/>
             </div>
             <div class="counter" id="example1">
               <div class="bg"></div>
-              <img src="digit.png"/>
+              <img src="digit-small.png"/>
             </div>
           </div>
         </div>
@@ -214,6 +242,15 @@
     </div>
   </footer>
 
+  <!-- Modal Structure -->
+  <div id="google_maps_rock" class="modal">
+    <!-- <div class="modal-content" id ="modal_content">
+    </div> -->
+    <!-- <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div> -->
+  </div>
+
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -228,7 +265,7 @@
 
       total_number_rocks = rocks.length;
 
-      // spin6 = ~~(total_number_rocks/Math.pow(10,5))- ~~(total_number_rocks/Math.pow(10,5+1))*10;
+      spin6 = ~~(total_number_rocks/Math.pow(10,5))- ~~(total_number_rocks/Math.pow(10,5+1))*10;
       spin5 = ~~(total_number_rocks/Math.pow(10,4))- ~~(total_number_rocks/Math.pow(10,4+1))*10;
       spin4 = ~~(total_number_rocks/Math.pow(10,3))- ~~(total_number_rocks/Math.pow(10,3+1))*10;
       spin3 = ~~(total_number_rocks/Math.pow(10,2))- ~~(total_number_rocks/Math.pow(10,2+1))*10;
@@ -236,6 +273,55 @@
       spin1 = ~~(total_number_rocks/Math.pow(10,0))- ~~(total_number_rocks/Math.pow(10,0+1))*10;
 
       // spinCounter config
+      $('#example12').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: 0,
+        startDigit:8
+      });
+      $('#example11').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: 0,
+        startDigit:2
+      });
+      $('#example10').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: 0,
+        startDigit:1
+      });
+      $('#example9').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: 0,
+        startDigit:5
+      });
+      $('#example8').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: 0,
+        startDigit:4
+      });
+      $('#example7').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: 0,
+        startDigit:7
+      });
+      $('#example6').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: spin6,
+        startDigit:2
+      });
       $('#example5').spinCounter({
         minDigitSpinDelay: 100,
         maxDigitSpinDelay: 1000,
@@ -318,25 +404,44 @@
       // var num_rocks = new CountUp("num_rocks_counter", 0, 3113, 0, 2.5, options);
       // num_rocks.start();
 
+      all_markers = [];
+
       function initialize() {
         var mapCanvas = document.getElementById('map_canvas');
         var mapOptions = {
-          center: new google.maps.LatLng(42.282544, -83.732732),
-          zoom: 14,
+          center: new google.maps.LatLng(41.850033, -87.6500523),
+          zoom: 4,
           scrollwheel: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(mapCanvas, mapOptions);
-        var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(42.282544, -83.732732),
-          map: map,
-          title: 'a rock',
-          icon: 'small_rock.png'
-        });
+        
+
+        for (var i = 0; i < rocks.length; i++) {
+
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(rocks[i]['lat'], rocks[i]['lng']),
+            map: map,
+            title: String(i),
+            icon: 'small_rock.png'
+          });
+
+          all_markers.push(marker);
+        }
+
+        for (var i = 0; i < all_markers.length; i++) {
+
+          all_markers[i].addListener('click', function() {
+            profile_modal(parseInt(this.getTitle()), rocks);
+          });
+
+        }
 
         // Create new markers based on API response
       }
+
       google.maps.event.addDomListener(window, 'load', initialize);
+
 
       // Populating the Latest Rocks Section - Limit 10
       render_most_popular_rocks(rocks);
