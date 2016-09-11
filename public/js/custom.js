@@ -120,7 +120,8 @@ function profile_modal(index, rocks) {
                   			</div></div></span></div>';
     current_rock_html += '<div class="card-reveal"> \
 			                  <span class="card-title grey-text text-darken-4 left-align"> \
-			                    <div class="col s3 valign">';
+			                  	<div class="row"> \
+			                    	<div class="col s3 valign">';
     current_rock_html += '<img class="circle responsive-img" src="' + current_rock['owner']['image'] + '"></div>';
     current_rock_html += '<div class="col s7"> \
 	                        <span class="black-text"> \
@@ -128,7 +129,7 @@ function profile_modal(index, rocks) {
 	current_rock_html += current_rock['owner']['username'] + '</span></div>';
 	current_rock_html += '<div class="col s2"> \
 	                        <i class="material-icons right">close</i> \
-	                      </div></span>';
+	                      </div></div></span>';
 
 	current_rock_html += '<table class="bordered popular-rocks"> \
 		                    <tbody> \
