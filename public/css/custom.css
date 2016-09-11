@@ -24,3 +24,6 @@ Custom styles for how-many-rocks
 html {
 	font-family: "Courier", sans-serif !important;
 }
+.cover-background {
+	height: 100% !important;
+}
