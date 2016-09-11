@@ -21,17 +21,17 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="#" id='home_btn'>Home</a></li>
         <li><a href="#" id='locations_btn'>Locations</a></li>
-        <li><a href="#" id='most_popular_btn'>Most Popular</a></li>
+        <li><a href="#" id='most_popular_btn'>Latest Rocks</a></li>
         <li><a href="#" id='testimonials_btn'>Testimonials</a></li>
-        <li><a href="#" id='reach_out_btn'>Reach Out</a></li>
+        <!-- <li><a href="#" id='reach_out_btn'>Reach Out</a></li> -->
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#" id='home_btn'>Home</a></li>
         <li><a href="#" id='locations_btn'>Locations</a></li>
-        <li><a href="#" id='most_popular_btn'>Most Popular</a></li>
+        <li><a href="#" id='most_popular_btn'>Latest Rocks</a></li>
         <li><a href="#" id='testimonials_btn'>Testimonials</a></li>
-        <li><a href="#" id='reach_out_btn'>Reach Out</a></li>
+        <!-- <li><a href="#" id='reach_out_btn'>Reach Out</a></li> -->
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -70,7 +70,7 @@
         </div>
 
         <div class="row center">
-          <h5 class="header col s12 light">A non-profit project to help us figure out how many there actually are.</h5>
+          <h5 class="header col s12 light">A massive multiplayer mobile experience designed to figure out how many rocks there are, and where are they.</h5>
         </div>
         <div class="row center">
           <a  id="what_weve_found_btn" class="btn-large waves-effect waves-light how-many-rocks-color lighten-1">See what we've found</a>
@@ -94,97 +94,7 @@
         <div class="col s12 center" id="most_popular_content">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>Latest Rocks</h4>
-          <p class="light">These are a few rocks the community really liked; &amp; we hope you like them too :)</p>
-
-
-          <div class="row">
-            <div class="col s12 m6 l4">
-
-              <div class="card hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="example.jpg">
-                </div>
-                <div class="card-content left-align">
-                  <span class="card-title activator grey-text text-darken-4">
-                    <div class="row valign-wrapper" style="margin-bottom: 0px !important">
-                      <div class="col s3 valign">
-                        <img class="circle responsive-img" src="example.jpg" alt="User Profile Picture">
-                      </div>
-                      <div class="col s9">
-                        <span class="black-text">
-                          <div class="discovered-by">Discovered by:</div>
-                          Username
-                        </span>
-                        <i class="material-icons right">more_vert</i>
-                      </div>
-                    </div>
-                  </span>
-                  
-                  <!-- <p><a href="#">This is a link</a></p> -->
-                </div>
-
-
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4 left-align">
-
-                    <div class="col s3 valign">
-                        <img class="circle responsive-img" src="example.jpg" alt="User Profile Picture">
-                      </div>
-                      <div class="col s7">
-                        <span class="black-text">
-                          <div class="discovered-by">Discovered by:</div>
-                          Username
-                        </span>
-                      </div>
-                      <div class="col s2">
-                        <i class="material-icons right">close</i>
-                      </div>
-                  </span>
-
-                  <table class="bordered popular-rocks">
-                    <tbody>
-                      <tr>
-                        <td class="uppercase">Rock No.</td>
-                        <td>000000000000003</td>
-                      </tr>
-                      <tr>
-                        <td class="uppercase">Location</td>
-                        <td>Grand Rapids, MI, USA</td>
-                      </tr>
-                      <tr>
-                        <td class="uppercase">Coordinates</td>
-                        <td>42,9182742, 73.2384923</td>
-                      </tr>
-                      <tr>
-                        <td class="uppercase">Discovered</td>
-                        <td>September 3, 2016</td>
-                      </tr>
-                      <tr>
-                        <td class="uppercase">Nickname</td>
-                        <td>daddy</td>
-                      </tr>
-                      <tr>
-                        <td class="uppercase">Notes</td>
-                        <td>Not my favorite rock. Kinda cold.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                </div>
-              </div>
-
-
-
-
-
-            </div>
-          </div>
-
-
-
-
-
-
+          <p class="light" style="margin-bottom: 0px !important">These are the most recent rocks discovered in the world.</p>
         </div>
       </div>
 
@@ -298,7 +208,7 @@
     <!-- </div> -->
     <div class="footer-copyright">
       <div class="container">
-      Made by <a href="http://hiphopgoldenage.com/wp-content/uploads/2015/07/BBimage1.jpg" class="brown-text text-lighten-3">a few white boys</a>
+      Created at Comedy Hack Day 11 by <a href="http://hiphopgoldenage.com/wp-content/uploads/2015/07/BBimage1.jpg" class="brown-text text-lighten-3">The Geodudes</a>
       </div>
     </div>
   </footer>
@@ -419,7 +329,8 @@
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(42.282544, -83.732732),
           map: map,
-          title: 'a rock'
+          title: 'a rock',
+          icon: 'small_rock.png'
         });
 
         // Create new markers based on API response
@@ -428,6 +339,11 @@
 
       // Populating the Latest Rocks Section - Limit 10
       render_most_popular_rocks(rocks);
+
+      // initialize carousel for latest rocks
+      $(document).ready(function(){
+        $('.carousel').carousel({});
+      });
     });
 
   </script>

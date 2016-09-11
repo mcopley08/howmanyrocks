@@ -50,3 +50,12 @@ html {
     position: absolute;
     z-index: 100;
 }
+
+.carousel .carousel-item {
+	width: 250px !important;
+	/*height: auto !important;*/
+}
+
+.carousel {
+	height: 450px !important;
+}
