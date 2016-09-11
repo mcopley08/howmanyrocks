@@ -20,3 +20,7 @@ Custom styles for how-many-rocks
 	font-weight: bold;
 	font-style: italic;
 }
+
+html {
+	font-family: "Courier", sans-serif !important;
+}

@@ -14,7 +14,7 @@
 <body id="home">
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <a id="logo-container" href="#" class="brand-logo"><img class="responsive-img" src="rock-logo.png" style="width:60px; height:60px"/></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#" id='home_btn'>Home</a></li>
         <li><a href="#" id='locations_btn'>Locations</a></li>
@@ -43,7 +43,7 @@
           <h5 class="header col s12 light">A non-profit project to help us figure out how many there actually are.</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">See what we've found</a>
+          <a  id="what_weve_found_btn" class="btn-large waves-effect waves-light teal lighten-1">See what we've found</a>
         </div>
         <br><br>
 
@@ -64,7 +64,7 @@
         <div class="col s12 center" id="most_popular">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>Most Popular Rocks</h4>
-          <p class="light">These are a few one's the community really liked; &amp; we hope you like them too :)</p>
+          <p class="light">These are a few rocks the community really liked; &amp; we hope you like them too :)</p>
 
 
           <div class="row">
@@ -268,7 +268,7 @@
     <!-- </div> -->
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made by <a class="brown-text text-lighten-3">a few white boys</a>
       </div>
     </div>
   </footer>
@@ -292,6 +292,11 @@
             'slow');
       });
       $("#locations_btn").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#map_canvas").offset().top},
+            'slow');
+      });
+      $("#what_weve_found_btn").click(function() {
         $('html,body').animate({
             scrollTop: $("#map_canvas").offset().top},
             'slow');
