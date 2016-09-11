@@ -27,3 +27,26 @@ html {
 .cover-background {
 	height: 100% !important;
 }
+
+.how-many-rocks-color {
+	background-color: #44E670 !important;
+}
+
+.how-many-rocks-text {
+	color: #44E670;
+}
+
+.counter {
+    width: 71px;
+    height: 96px;
+    overflow: hidden;
+    background-color: white;
+    display: inline-block;
+}
+.counter .bg {
+    /*background: url('../bg.png') no-repeat;*/
+    width: 71px;
+    height: 96px;
+    position: absolute;
+    z-index: 100;
+}

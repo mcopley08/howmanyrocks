@@ -2,10 +2,15 @@
 
 function render_most_popular_rocks(rock_list) {
 
+	var stopping_value = 10;
+	if (rock_list.length < 10) {
+		stopping_value = rock_list.length;
+	}
+
 	rock_html = '<div class="row"> \
 					<div class="col s6 m4">';
 
-	for (var i = 0; i < rock_list.length; i++) {
+	for (var i = 0; i < stopping_value; i++) {
 
 		if (i % 3 == 0 && i != 0) {
 			rock_html = '</div></div><div class="row"> \
@@ -69,5 +74,5 @@ function render_most_popular_rocks(rock_list) {
     rock_html += '</div></div>';
 
     // Updating the webpage with our new information.
-    document.getElementById('most_popular').append(rock_html)
+    // document.getElementById('most_popular_content').appendChild(rock_html);
 }

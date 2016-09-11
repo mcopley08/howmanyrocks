@@ -59,19 +59,33 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
 
+var url = 'http://howmanyrocks.ngrok.io/rocks';
+
+
+
+
 // ACTUAL ROUTES
 app.get('/', function(req, res) {
 
-  // MongoDB call for geolocations of all rocks
+  http_obj.get(url, function(api_res){
+    var body = '';
 
-  // Call for most popular and/or recent rocks
+    api_res.on('data', function(chunk){
+        body += chunk;
+    });
 
-  // Call for the total number of rocks (or infer from previous call)
-
-  res.render('index', {
-    'geo_locations': [],
-    'most_popular_rocks': [],
-    'total_num_rocks': 7
+    api_res.on('end', function(){
+        var rocks = JSON.parse(body);
+        console.log("Got a response: ", rocks);
+        res.render('index', {
+          'rocks': rocks
+        });
+    });
+  }).on('error', function(e){
+        console.log("Couldn't draw rock data: ", e);
+        res.render('index', {
+          'rocks': []
+        });
   });
 });
 

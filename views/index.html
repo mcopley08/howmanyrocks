@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Parallax Template - Materialize</title>
+  <title>How Many Rocks?</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,12 +41,39 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2" style="display:inline-block">How many rocks are there? <span id="num_rocks_counter"></span></h1>
+        <h1 class="header center how-many-rocks-text text-lighten-2" style="display:inline-block">How many rocks are there? <span id="num_rocks_counter"></span></h1>
+
+        <!-- Counter -->
+        <div class="row center">
+          <div class="col s12 m8 offset-m2 l8 offset-l2">
+           <!--  <div class="counter" id="example5">
+              <div class="bg"></div>
+              <img src="digit.png"/>
+            </div> -->
+            <div class="counter" id="example4">
+              <div class="bg"></div>
+              <img src="digit.png"/>
+            </div>
+            <div class="counter" id="example3">
+              <div class="bg"></div>
+              <img src="digit.png"/>
+            </div>
+            <div class="counter" id="example2">
+              <div class="bg"></div>
+              <img src="digit.png"/>
+            </div>
+            <div class="counter" id="example1">
+              <div class="bg"></div>
+              <img src="digit.png"/>
+            </div>
+          </div>
+        </div>
+
         <div class="row center">
           <h5 class="header col s12 light">A non-profit project to help us figure out how many there actually are.</h5>
         </div>
         <div class="row center">
-          <a  id="what_weve_found_btn" class="btn-large waves-effect waves-light teal lighten-1">See what we've found</a>
+          <a  id="what_weve_found_btn" class="btn-large waves-effect waves-light how-many-rocks-color lighten-1">See what we've found</a>
         </div>
         <br><br>
 
@@ -64,9 +91,9 @@
     <div class="section">
 
       <div class="row">
-        <div class="col s12 center" id="most_popular">
+        <div class="col s12 center" id="most_popular_content">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Popular Rocks</h4>
+          <h4>Latest Rocks</h4>
           <p class="light">These are a few rocks the community really liked; &amp; we hope you like them too :)</p>
 
 
@@ -240,7 +267,7 @@
     <div class="parallax"><img src="rocks-image-3.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
-  <footer class="page-footer teal" id="reach_out">
+  <footer class="page-footer how-many-rocks-color" id="reach_out">
     <!-- <div class="container"> -->
       <!-- <div class="row">
         <div class="col l6 s12">
@@ -282,10 +309,57 @@
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGoDuHe3vrF1_mJAoRi4-n-3KjDFmPkek&sensor=false"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
   <script src="js/custom.js"></script>
-  <script src="js/countUp.js"></script>
+  <script src="js/spinCounter.js"></script>
+  <!-- <script src="js/countUp.js"></script> -->
   <script type="text/javascript">
     /* This is for the full screen video background */
     $(document).ready(function () {
+
+      total_number_rocks = rocks.length;
+
+      // spin6 = ~~(total_number_rocks/Math.pow(10,5))- ~~(total_number_rocks/Math.pow(10,5+1))*10;
+      spin5 = ~~(total_number_rocks/Math.pow(10,4))- ~~(total_number_rocks/Math.pow(10,4+1))*10;
+      spin4 = ~~(total_number_rocks/Math.pow(10,3))- ~~(total_number_rocks/Math.pow(10,3+1))*10;
+      spin3 = ~~(total_number_rocks/Math.pow(10,2))- ~~(total_number_rocks/Math.pow(10,2+1))*10;
+      spin2 = ~~(total_number_rocks/Math.pow(10,1))- ~~(total_number_rocks/Math.pow(10,1+1))*10;
+      spin1 = ~~(total_number_rocks/Math.pow(10,0))- ~~(total_number_rocks/Math.pow(10,0+1))*10;
+
+      // spinCounter config
+      $('#example5').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: spin5,
+        startDigit:1
+      });
+      $('#example4').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: spin4,
+        startDigit:5
+      });
+      $('#example3').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: spin3,
+        startDigit:8
+      });
+      $('#example2').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: spin2,
+        startDigit:3
+      });
+      $('#example1').spinCounter({
+        minDigitSpinDelay: 100,
+        maxDigitSpinDelay: 1000,
+        spinTime: 2000,
+        stopDigit: spin1,
+        startDigit:2
+      });
 
 
       // Scroll Code
@@ -322,16 +396,16 @@
 
 
       // CountUp code
-      var options = {
-        useEasing : true, 
-        useGrouping : true, 
-        separator : ',', 
-        decimal : '.', 
-        prefix : '', 
-        suffix : '' 
-      };
-      var num_rocks = new CountUp("num_rocks_counter", 0, 3113, 0, 2.5, options);
-      num_rocks.start();
+      // var options = {
+      //   useEasing : true, 
+      //   useGrouping : true, 
+      //   separator : ',', 
+      //   decimal : '.', 
+      //   prefix : '', 
+      //   suffix : '' 
+      // };
+      // var num_rocks = new CountUp("num_rocks_counter", 0, 3113, 0, 2.5, options);
+      // num_rocks.start();
 
       function initialize() {
         var mapCanvas = document.getElementById('map_canvas');
@@ -347,9 +421,13 @@
           map: map,
           title: 'a rock'
         });
+
+        // Create new markers based on API response
       }
       google.maps.event.addDomListener(window, 'load', initialize);
-      // initialize();
+
+      // Populating the Latest Rocks Section - Limit 10
+      render_most_popular_rocks(rocks);
     });
 
   </script>
