@@ -97,8 +97,6 @@ function date_helper(string_date) {
 
 function profile_modal(index, rocks) {
 
-	alert('index is: ' + index);
-
 	// clear the contents of the modal
 	$('#google_maps_rock').empty();
 
