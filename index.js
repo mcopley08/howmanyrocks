@@ -59,7 +59,7 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
 
-var url = 'http://howmanyrocks.ngrok.io/rocks';
+var url = 'http://howmanyrocks.herokuapp.com/rocks';
 
 
 
