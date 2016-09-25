@@ -59,9 +59,7 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
 
-var url = 'http://howmanyrocks.herokuapp.com/rocks';
-
-
+var url = 'http://howmanyrocks.herokuapp.com/rocks?all';
 
 
 // ACTUAL ROUTES
@@ -77,6 +75,8 @@ app.get('/', function(req, res) {
     api_res.on('end', function(){
         var rocks = JSON.parse(body);
         console.log("Got a response: ", rocks);
+        console.log("Latitude & Longitude");
+        console.log(rocks[0].location['coordinates'][0])
         res.render('index', {
           'rocks': rocks
         });

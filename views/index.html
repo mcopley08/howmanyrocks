@@ -409,8 +409,8 @@
       function initialize() {
         var mapCanvas = document.getElementById('map_canvas');
         var mapOptions = {
-          center: new google.maps.LatLng(40.742856, -73.989949),
-          zoom: 14,
+          center: new google.maps.LatLng(40.846094, -99.747868),
+          zoom: 4,
           scrollwheel: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
@@ -420,7 +420,7 @@
         for (var i = 0; i < rocks.length; i++) {
 
           var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(rocks[i]['lat'], rocks[i]['lng']),
+            position: new google.maps.LatLng(parseFloat(rocks[i].location['coordinates'][1]), parseFloat(rocks[i].location['coordinates'][0])),
             map: map,
             title: String(i),
             icon: 'small_rock.png'
